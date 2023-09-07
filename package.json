@@ -27,7 +27,7 @@
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "snapshot": "storycap --serverCmd \"cd ./storybook-static && python3 -m http.server 9001\" http://localhost:9001 -o __actual__",
+    "snap": "storycap --serverCmd \"cd ./storybook-static && http-server -p 9001\" http://localhost:9001 -o __actual__",
     "vrt": "reg-cli __actual__ __screenshots__ __diff__ -R report.html",
     "update-snapshot": "reg-cli __actual__ __screenshots__ __diff__ -U"
   },
