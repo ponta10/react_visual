@@ -14,8 +14,25 @@ jobs:
       - name: build-storybook
         run: yarn build-storybook
 
-      - name: snapshots
+      - name: snapshot
         run: yarn snap
 
       - name: VRT
+        id: vrt
         run: yarn vrt
+        continue-on-error: true
+
+      - name: upload report
+        uses: actions/upload-artifact@v2
+        with:
+          name: vrt-report
+          path: |
+            report.html
+            __actual__
+            __screenshots__
+            __diff__
+          retention-days: 5
+
+      - if: ${{ steps.vrt.outcome != 'success' }}
+        run: exit 1
+
