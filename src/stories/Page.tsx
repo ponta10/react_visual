@@ -62,7 +62,7 @@ export const Page: React.FC = () => {
               />
             </g>
           </svg>
-          Viewports addon in the toolbar
+          俺がいない時代に生まれだけの凡夫
         </div>
       </section>
     </article>
